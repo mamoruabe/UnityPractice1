@@ -19,7 +19,7 @@ if (Input.GetKey(KeyCode.LeftArrow)) {
             	//transform.position = transform.forward * 4.2f;
             //}
             //else{
-            	transform.position += transform.forward * 0.02f;
+            	transform.position += transform.forward * 0.1f;
             //}
 
 }
@@ -29,11 +29,14 @@ else if (Input.GetKey(KeyCode.RightArrow)) {
             	//transform.position = transform.forward * 4.2f;
             //}
             //else{
-            	transform.position -= transform.forward * 0.02f;
+            	transform.position -= transform.forward * 0.1f;
             //}
 
         }
-        
+Vector3 pos = transform.position;
+if(pos.z > 4.2f){pos.z = 4.2f;}
+else if(pos.z < -4.2f){pos.z = -4.2f;}
+transform.position = pos;
     
 //else {
 //	GameObject.Find("master").GetComponent<GameMaster>().GameOver("");
